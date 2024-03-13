@@ -1,9 +1,11 @@
-html {
-    height: 100%;
-}
+
 
 body {
     background-color: rgb(245, 245, 245);
+}
+
+#logo {
+    background-color: black;
 }
 
 /* from Bulma */
@@ -72,6 +74,6 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 132px;
     }
 }
