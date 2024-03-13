@@ -2,14 +2,6 @@
 {% load static %}
 
 {% block banner %}
-<div class="row">
-    <div class="col-6 text-center">
-        <h5>free</h5>
-    </div>
-    <div class="col-6 text-center">
-        <h5>10%</h5>
-    </div>
-</div>
 {% endblock %}
 
 {% block page_header %}
@@ -21,10 +13,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="media/squad.bg.jpg" class="d-block w-100" alt="woman squating">
+      </div>
+      <div class="carousel-item">
+        <img src="media/dumbbell.bg.jpg" class="d-block w-100" alt="dumbell set">
+      </div>
     </div>
+  </div>
 {% endblock %}
 
