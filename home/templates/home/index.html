@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block banner %}
-{% endblock %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -11,51 +8,25 @@
         </div>
     </div>
 {% endblock %}
+{% block banner %}
+  <div id="delivery-banner" class="row text-center">
+    <div class="col-6 bg-black text-white">
+        <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+    </div>
+    <div class="col-6 bg-black text-white">
+        <h4 class="logo-font my-1">{{ discount }}% Discount for subscribers</h4>                
+    </div>           
+  </div>
+{% endblock %}
 
 {% block content %}
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card text-dark">
-            <img src="media/squad.bg.jpg" class="card-img" alt="woman squating">
-            <div class="card-img-overlay">
-              <div class="container h-100">
-                <div class="row h-100">
-                  <div class="col-7 col-md-6 my-5">
-                    <h1 class="display-4 logo-font text-black">
-                      Products to help you on your Journey
-                    </h1>
-                    <div class="my-5">
-                      <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="carousel-item carousel-image bg-img-1 active">
+            <h2>Happy</h2>
         </div>        
-        <div class="carousel-item">
-          <div class="card text-dark">
-            <img src="media/dumbbell.bg.jpg" class="card-img" alt="woman squating">
-            <div class="card-img-overlay">
-              <div class="container h-100">
-                <div class="row h-100">
-                  <div class="col-7 col-md-6 my-auto">
-                    <h1 class="display-4 logo-font text-black">
-                      Embrace your desire to shift into overdrive. let us provide the structure.
-                    </h1>
-                    <div class="my-5">
-                      <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Find out more</a>
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="carousel-item carousel-image bg-img-2">
+              
         </div>
       </div>
     </div>

@@ -1,11 +1,39 @@
-
+html {
+    height: 100%;
+}
 
 body {
-    background-color: rgb(245, 245, 245);
+    background-color: whitesmoke;
+}
+
+.logo {
+    background: url('/media/logo2.jpg');
+
+}
+
+.bg-logo {
+    height: 50%;
+    width: 75%;
+}
+
+.bg-img-1 {
+    background-image: url('/media/squad.bg.jpg');
+}
+
+.bg-img-2 {
+    background-image: url('/media/dumbbell.bg.jpg');
+}
+
+.carousel-image {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 #logo {
-    background-color: black;
+    font-family: 'caveat';
+    font-weight: 800;
 }
 
 /* from Bulma */
@@ -15,6 +43,10 @@ body {
     justify-content: center;
     height: 1.5rem;
     width: 1.5rem;
+}
+
+.search {
+    padding: 0;
 }
 
 .logo-font {
@@ -54,6 +86,10 @@ body {
     border: 1px solid black !important;
 }
 
+.bg-black {
+    background: #000 !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -74,6 +110,6 @@ body {
     }
 
     .header-container {
-        padding-top: 132px;
+        padding-top: 150px;
     }
 }
