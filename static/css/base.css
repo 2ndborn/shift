@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: whitesmoke;
+    font-family: 'caveat';
 }
 
 .logo {
@@ -110,6 +110,6 @@ body {
     }
 
     .header-container {
-        padding-top: 150px;
+        padding-top: 164px;
     }
 }
