@@ -13,7 +13,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=supplements">
                 Supplements <span class="icon"><i class="fa-solid fa-jar"></i></span>
             </a>
         </li>
@@ -23,14 +23,14 @@
                 Clothing <span class="icon"><i class="fa-solid fa-shirt"></i></span>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Men</a>
-                <a href="" class="dropdown-item">Women</a>
-                <a href="" class="dropdown-item">All Clothing</a>
+                <a href="{% url 'products' %}?category=men" class="dropdown-item">Men</a>
+                <a href="{% url 'products' %}?category=women" class="dropdown-item">Women</a>
+                <a href="{% url 'products' %}?category=men,women" class="dropdown-item">All Clothing</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=equipment">
                 Equipment <span class="icon"><i class="fa-solid fa-dumbbell"></i></span>
             </a>            
         </li>
