@@ -90,6 +90,19 @@ body {
     background: #000 !important;
 }
 
+a.category-badge {
+    transition: transform .2s;
+    font-size: 25px;
+}
+
+a.category-badge > span.badge:hover {
+    background: #dc3545 !important;
+    color: #fff !important;
+    -ms-transform: scale(1.25); /* IE 9 */
+    -webkit-transform: scale(1.25); /* Safari 3-8 */
+    transform: scale(1.25); 
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
