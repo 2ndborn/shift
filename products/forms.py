@@ -1,11 +1,12 @@
-from django import crispy_forms
+from django import forms
 from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
+
     class Meta:
         model = Product
-        field = '__all__'
+        fields = '__all__'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
