@@ -76,10 +76,11 @@ def add_product(request):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, you are not authorised to view this page')
         return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
