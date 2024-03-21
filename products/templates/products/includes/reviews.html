@@ -1,9 +1,9 @@
 <h3 class="my-5">Customer Reviews</h3>
 
-    {% csrf_token %}
     <h5>How would you rate this product?</h5>
     <!-- Rating stars -->
-    <form class="form" action="" method="POST">        
+    <form class="form" action="{% url 'add_review' product.id %}" method="POST">
+    {% csrf_token %}        
         <div class="form-group rate">
             <input type="radio" name=rating id="rating10" value="5" required><label for="rating10" title="5"></label>
             <input type="radio" name=rating id="rating9" value="4.5" required><label for="rating9" title="4.5" class="half"></label>
