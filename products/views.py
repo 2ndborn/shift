@@ -133,12 +133,12 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
-
+@login_required
 def add_review(request, product_id):
     """ Add a review to a product """
     product = get_object_or_404(Product, pk=product_id)
-    review, created = Review.objects.get_or_create(user=request.user, product=product)
-
+    user_profile = request.user.userprofile
+    review, created = Review.objects.get_or_create(user=user_profile, product=product)
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
