@@ -43,7 +43,7 @@
                             <i class="fa fa-star {% if review_score > 2 %} checked {% else %} d-none {% endif %}"></i>
                             <i class="fa fa-star {% if review_score > 3 %} checked {% else %} d-none {% endif %}"></i>
                             <i class="fa fa-star {% if review_score > 4 %} checked {% else %} d-none {% endif %}"></i>
-                            <a href="">({{ num_reviews }})</a>
+                            <a href="#customer_reviews">({{ num_reviews }})</a>
                         </small>
                     {% else %}
                         <small class="text-muted" role="button" data-toggle="tooltip" data-placement="top" title="Review this product">No Rating </small>
@@ -108,16 +108,44 @@
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            <!-- Review trigger modal -->
+                            {% if user.is_authenticated %}
+                            <button type="button" class="btn btn-secondary rounded-0 text text-uppercase mt-5" data-toggle="modal" data-target="#reviewModal">Leave a review</button>
+                            {% endif %}
                             {% endwith %}
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <hr>
+        <hr>        
+
+        <!-- Review Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">How would you rate this product?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    {% include 'products/includes/reviews.html' %}
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  
         <div class="row">
-            <div class="col-12 col-lg-7 ml-5">
-                {% include 'products/includes/reviews.html' %}
+            <div class="col">
+                <a name="customer_reviews">
+                    <h3 class="my-5 ml-5">Customer Reviews</h3>
+                </a>
             </div>
         </div>
         <div class="row">
