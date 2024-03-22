@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.db.models import Avg
 
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
@@ -48,7 +49,6 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
-
     context = {
         'products': products,
         'search_term': query,
@@ -63,11 +63,15 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.filter(product=product)
+    reviews = Review.objects.filter(product=product)
+    num_reviews = reviews.count()
+    review_score = reviews.aggregate(Avg('rating'))['rating__avg'] or 0
 
     context = {
         'product': product,
-        'review': review,
+        'reviews': reviews,
+        'num_reviews': num_reviews,
+        'review_score': review_score,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -155,8 +159,14 @@ def add_review(request, product_id):
 
 def view_review(request, product_id):
     """ to view reviews """
-    reviews = Review.objects.filter(product=product)
+    review = Review.objects.filter(product=product)
+    num_reviews = reviews.count()
+    review_score = Review.objects.aggregate(Avg('rating', default=0))
+
 
     context = {
-        'reviews': reviews
+        'reviews': reviews,
+        'num_reviews': num_reviews,
+        'review_score': review_score,
+
     }

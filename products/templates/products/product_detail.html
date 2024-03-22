@@ -36,8 +36,15 @@
                             </a>
                         </p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><a href=""><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5 </a></small>
+                    {% if review_score %}
+                        <small class="text-muted">
+                            <i class="fa fa-star {% if review_score > 0 %} checked {% else %} d-none {% endif %}"></i>
+                            <i class="fa fa-star {% if review_score > 1 %} checked {% else %} d-none {% endif %}"></i>
+                            <i class="fa fa-star {% if review_score > 2 %} checked {% else %} d-none {% endif %}"></i>
+                            <i class="fa fa-star {% if review_score > 3 %} checked {% else %} d-none {% endif %}"></i>
+                            <i class="fa fa-star {% if review_score > 4 %} checked {% else %} d-none {% endif %}"></i>
+                            <a href="">({{ num_reviews }})</a>
+                        </small>
                     {% else %}
                         <small class="text-muted" role="button" data-toggle="tooltip" data-placement="top" title="Review this product">No Rating </small>
                     {% endif %}
@@ -114,17 +121,18 @@
             </div>
         </div>
         <div class="row">
-            {% for r in review %}
+            {% for r in reviews %}
             <div class="col-12 col-lg-7 ml-5">                
                 <div class="card mb-5">
                     <div class="card-body">
                       <h4 class="card-title">{{ r.subject}}</h4>
                       <h6 class="card-subtitle mb-2 text-muted">{{ r.user}} {{ r.created_at }}</h6>
-                      <i class="fa fa-star {% if r.rating > 0 %} checked {% endif %}"></i>
-                      <i class="fa fa-star {% if r.rating > 1 %} checked {% endif %}"></i>
-                      <i class="fa fa-star {% if r.rating > 2 %} checked {% endif %}"></i>
-                      <i class="fa fa-star {% if r.rating > 3 %} checked {% endif %}"></i>
-                      <i class="fa fa-star {% if r.rating > 4 %} checked {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 0 %} checked {% else %} d-none {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 1 %} checked {% else %} d-none {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 2 %} checked {% else %} d-none {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 3 %} checked {% else %} d-none {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 4 %} checked {% else %} d-none {% endif %}"></i>
+                      
                       <hr>
                       <p class="card-text">{{ r.review }}</p>
                     </div>
