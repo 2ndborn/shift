@@ -63,9 +63,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    review = Review.objects.filter(product=product)
 
     context = {
         'product': product,
+        'review': review,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -149,3 +151,12 @@ def add_review(request, product_id):
             messages.error(request, 'There was an error with your review.')
     else:
         form = ReviewForm(instance=review)
+
+
+def view_review(request, product_id):
+    """ to view reviews """
+    reviews = Review.objects.filter(product=product)
+
+    context = {
+        'reviews': reviews
+    }

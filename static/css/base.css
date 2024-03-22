@@ -328,6 +328,11 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
     color:#cc9000
 }
 
+/* Customer review stars */
+.checked {
+    color: #ffc107;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

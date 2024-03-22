@@ -113,6 +113,25 @@
                 {% include 'products/includes/reviews.html' %}
             </div>
         </div>
+        <div class="row">
+            {% for r in review %}
+            <div class="col-12 col-lg-7 ml-5">                
+                <div class="card mb-5">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ r.subject}}</h4>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ r.user}} {{ r.created_at }}</h6>
+                      <i class="fa fa-star {% if r.rating > 0 %} checked {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 1 %} checked {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 2 %} checked {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 3 %} checked {% endif %}"></i>
+                      <i class="fa fa-star {% if r.rating > 4 %} checked {% endif %}"></i>
+                      <hr>
+                      <p class="card-text">{{ r.review }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
 

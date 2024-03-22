@@ -27,8 +27,9 @@ class ReviewAdmin(admin.ModelAdmin):
         'user',
         'subject',
         'review',
-        'ip',
         'status',
+        'created_at',
+        'updated_at',
     )
 
 admin.site.register(Product, ProductAdmin)
