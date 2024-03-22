@@ -142,9 +142,23 @@ def delete_product(request, product_id):
 @login_required
 def add_review(request, product_id):
     """ Add a review to a product """
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))          
     product = get_object_or_404(Product, pk=product_id)
     user_profile = request.user.userprofile
-    review, created = Review.objects.get_or_create(user=user_profile, product=product)
+    # check if the user has purchased the product
+    if not product.orders.filter(user=user_profile).exist():
+        messages.error(request, 'You must first purchase this product before you can review it.')
+        return redirect(reverse(product_detail, args=[product.id]))
+    
+    # checks if the user has already reviewed the product
+    review = Review.objects.get(user=user_profile, product=product).first()
+    if review:
+        messages.error(request, 'You have already reviewed this product')
+        return redirect(reverse(product_detail, args=[product.id]))
+    # if no review    
+    review = Review(user=user_profile, product=product)
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
@@ -168,5 +182,4 @@ def view_review(request, product_id):
         'reviews': reviews,
         'num_reviews': num_reviews,
         'review_score': review_score,
-
     }
