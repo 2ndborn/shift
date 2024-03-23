@@ -310,13 +310,13 @@ a.category-badge > span.badge:hover {
     cursor: pointer;
   }
 
-  /* half stars */
+  /* half stars
 
   .rate > .half:before {
     content: "\f089";
     position: absolute;
     padding-right: 0;
-  }
+  } */
 
   /* click & hover */
 input:checked ~ label, input:hover ~ label {

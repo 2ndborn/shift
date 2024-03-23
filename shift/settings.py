@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # Other
     'crispy_forms',
+    'widget_tweaks',
 
 ]
 

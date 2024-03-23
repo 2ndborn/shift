@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col text-center">
+            <a name="customer_reviews">
+                <h3 class="my-5">Edit Review</h3>
+            </a>
+        </div>        
+    </div>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group rate">
+                <input type="radio" name="rating" id="rating5" value="5" required {% if form.rating.value == 5 %}checked{% endif %}><label for="rating5" title="5"></label>
+                <input type="radio" name="rating" id="rating4" value="4" required {% if form.rating.value == 4 %}checked{% endif %}><label for="rating4" title="4"></label>
+                <input type="radio" name="rating" id="rating3" value="3" required {% if form.rating.value == 3 %}checked{% endif %}><label for="rating3" title="3"></label>
+                <input type="radio" name="rating" id="rating2" value="2" required {% if form.rating.value == 2 %}checked{% endif %}><label for="rating2" title="2"></label>
+                <input type="radio" name="rating" id="rating1" value="1" required {% if form.rating.value == 1 %}checked{% endif %}><label for="rating1" title="1"></label>
+            </div>   
+            <div class="form-group">
+                <label for="{{ form.subject.id_for_label }}">Review Title</label>
+                {{ form.subject|add_class:"form-control" }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.review.id_for_label }}">Tell us more...</label>
+                {{ form.review|add_class:"form-control" }}
+            </div>
+            <div class="form-group text-center">
+                <a class="btn btn-danger" href="{% url 'product_detail' product.id %}">Cancel</a>
+                <button type="submit" class="btn-black">Update Review</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+{% endblock %}
