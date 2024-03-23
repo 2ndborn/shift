@@ -209,3 +209,9 @@ def view_review(request, product_id):
         'num_reviews': num_reviews,
         'review_score': review_score,
     }
+
+
+def subscription(request):
+    """A view to render the subscription page"""
+
+    return render(request, 'products/subscription.html')
