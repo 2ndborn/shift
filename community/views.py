@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, redirect
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.views import View
 from .models import Post
@@ -26,14 +26,13 @@ def community(request):
     return render(request, 'community/community.html', context)
 
 
-
 def post(request):
     """A view to return the users post"""
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)  # Correct usage
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
-            post.member = request.user  # Set the member here
+            post.member = request.user
             post.save()
             messages.success(request, 'Successfully post!')
             return redirect(reverse('community'))
@@ -47,5 +46,28 @@ def post(request):
     }
 
     return render(request, 'community/post.html', context)
+
+
+def edit_post(request, post_id):
+    """A view to edit the users post"""
+    post = get_object_or_404(Post, pk=post_id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated post!')
+            return redirect(reverse('community'))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = PostForm(instance=post)
+
+    template = 'community/edit_post.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
 
 

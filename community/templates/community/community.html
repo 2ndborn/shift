@@ -54,7 +54,7 @@
                         <p class="card-text text-muted my-2">{{ post.created_on }}</p>
                         <div class="text-center">
                             <button type="button" class="btn btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></button>
-                            <a href="" type="submit" class="btn btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                         </div>
                     </div>
                 </div>
