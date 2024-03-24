@@ -10,3 +10,9 @@ class Post(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     created_on = models.DateTimeField(default=timezone.now)
+
+
+class Comment(models.Model):
+    member = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=250, blank=False)
+    created_on = models.DateTimeField(default=timezone.now)
