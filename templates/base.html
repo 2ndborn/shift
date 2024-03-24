@@ -99,6 +99,7 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
+                                    <a href="{% url 'community' %}" class="dropdown-item">Community</a>
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
@@ -141,7 +142,7 @@
                 <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
             </div>
             <div class="col bg-black text-white">
-                <a class="text-reset" href="">
+                <a class="text-reset" href="{% url 'subscription' %}">
                     <h4 class="logo-font my-1">{{ members_discount_percentage }}% Discount for members!</h4>
                 </a>
             </div>            
