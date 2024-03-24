@@ -148,13 +148,13 @@
                         <p class="card-text">{{ review.review }}</p>
                         <p>{{ review.user }}</p>
                         <p>{{ request.user }}</p>
-                        {% if user.is_authenticated %}
-                        <div class="row">
-                            <div class="col">
-                                <a href="{% url 'edit_review' product_id=product.id review_id=review.id %}">Edit</a>
-                                <a href="{% url 'delete_review' product_id=product.id review_id=review.id %}">Delete</a>
+                        {% if review.user.user == request.user %}
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{% url 'edit_review' product_id=product.id review_id=review.id %}">Edit</a>
+                                    <a href="{% url 'delete_review' product_id=product.id review_id=review.id %}">Delete</a>
+                                </div>
                             </div>
-                        </div>
                         {% endif %}
                     </div>
                 </div>

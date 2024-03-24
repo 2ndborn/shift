@@ -16,24 +16,36 @@ class PostListView(View):
         return render(request, 'community/community.html', context)
 
 def community(request):
-    """A view to return the community page"""
+    """A view to return the community page""" 
+    posts = Post.objects.all()
 
-    return render(request, 'community/community.html')
+    context = {
+        'post_list': posts,
+    }
+
+    return render(request, 'community/community.html', context)
+
 
 
 def post(request):
     """A view to return the users post"""
     if request.method == 'POST':
-        form = PostForm
+        form = PostForm(request.POST, request.FILES)  # Correct usage
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.member = request.user  # Set the member here
+            post.save()
             messages.success(request, 'Successfully post!')
             return redirect(reverse('community'))
         else:
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')
+    else:
+        form = PostForm()
 
     context = {
         'form': form,
     }
-    
-    return render(request, 'community/community.html', context)
+
+    return render(request, 'community/post.html', context)
+
+
