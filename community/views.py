@@ -71,3 +71,9 @@ def edit_post(request, post_id):
     return render(request, template, context)
 
 
+def delete_post(request, post_id):
+    """A view to delete the users post"""
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('community'))
