@@ -1,8 +1,8 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.views import View
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comment
+from .forms import PostForm, CommentForm
 
 
 class PostListView(View):
@@ -81,4 +81,24 @@ def delete_post(request, post_id):
 
 def comment(request, post_id):
     """A view to comment another users post"""
-    return render(request, 'community/comment.html')
+    post = get_object_or_404(Post, pk=post_id)
+    comment_instance = None  # You need to replace this with an actual Comment instance
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment_instance)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated post!')
+            return redirect(reverse('community'))
+        else:
+            messages.error(request, 'Failed to post comment. Please ensure the form is valid.')
+    else:
+        form = CommentForm(instance=comment_instance)
+
+    template = 'community/comment.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
