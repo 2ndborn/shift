@@ -77,3 +77,8 @@ def delete_post(request, post_id):
     post.delete()
     messages.success(request, 'Post deleted!')
     return redirect(reverse('community'))
+
+
+def comment(request, post_id):
+    """A view to comment another users post"""
+    return render(request, 'community/comment.html')
