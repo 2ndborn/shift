@@ -44,29 +44,51 @@
             <div class="col-12 col-lg-6 offset-lg-3 my-2">
                 <div class="card border border-black">
                     <div class="card-body">
-                        <h5 class="card-title">{{ post.member }}</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="card-title">{{ post.member }}</h5>
+                            </div>
+                            <div class="col-6 text-right">
+                                <small class="text-muted my-2">{{ post.created_on }}</small>
+                            </div>
+                        </div>
                         <hr>
                         <p class="card-text">{{ post.content }}</p>
                         <hr>
                         {% if post.image %}
-                            <img class="card-image-bottom w-100" src="{{ post.image.url }}" >
+                            <img class="card-image-bottom w-100 mb-3" src="{{ post.image.url }}" >
                         {% endif %}
-                        <p class="card-text text-muted my-2">{{ post.created_on }}</p>
-                        <div class="row">
-                            <div class="col-6">
-                                <a class="text-muted text-left pt-2" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Comments</a>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a href="{% url 'comment' post.id %}" class="btn btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
-                                <a href="{% url 'delete_post' post.id %}" class="btn btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
-                                <a href="{% url 'edit_post' post.id %}" class="btn btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                        <div class="row mb-3">
+                            <div class="col text-right">
+                                <a href="{% url 'comment' post.id %}" class="btn-sm btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
+                                <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                             </div>
                         </div>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body my-4">
-                              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        <hr>
+                        <div>
+                            <div>
+                                <a class="text-muted text-left pt-2">Comments</a>
                             </div>
-                          </div>
+                            {% for comment in post.comments.all %}
+                            <div class="card card-body my-4 pb-3">
+                                <div class="row">
+                                    <div class="col-6 card-title">
+                                        <h6>From: <strong>{{ comment.member }}</strong></h6>
+                                    </div>
+                                    <div class="col-6 card-title text-right">
+                                        <small class="text-muted">{{ comment.created_on }}</small>
+                                    </div>
+                                </div>
+                                <hr>
+                                <p class="card-text mt-4">{{ comment.comment }}</p>
+                                <div class="text-right">
+                                    <a href="" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>

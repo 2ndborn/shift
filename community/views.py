@@ -18,9 +18,11 @@ class PostListView(View):
 def community(request):
     """A view to return the community page""" 
     posts = Post.objects.all()
+    comments = Comment.objects.all()
 
     context = {
         'post_list': posts,
+        'comment_list': comments,
     }
 
     return render(request, 'community/community.html', context)
@@ -82,11 +84,15 @@ def delete_post(request, post_id):
 def comment(request, post_id):
     """A view to comment another users post"""
     post = get_object_or_404(Post, pk=post_id)
-    comment_instance = None  # You need to replace this with an actual Comment instance
+    comment_instance = None
 
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment_instance)
         if form.is_valid():
+            comment = form.save(commit=False)
+            comment.member = request.user
+            comment.post = post
+            comment.save()
             form.save()
             messages.success(request, 'Successfully updated post!')
             return redirect(reverse('community'))
@@ -96,6 +102,35 @@ def comment(request, post_id):
         form = CommentForm(instance=comment_instance)
 
     template = 'community/comment.html'
+    context = {
+        'form': form,
+        'post': post,
+    }
+
+    return render(request, template, context)
+
+
+def edit_comment(request, post_id, comment_id):
+    """A view to comment another users post"""
+    post = get_object_or_404(Post, pk=post_id)
+    comment_instance = get_object_or_404(Comment, pk=comment_id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment_instance)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.member = request.user
+            comment.post = post
+            comment.save()
+            form.save()
+            messages.success(request, 'Successfully updated post!')
+            return redirect(reverse('community'))
+        else:
+            messages.error(request, 'Failed to post comment. Please ensure the form is valid.')
+    else:
+        form = CommentForm(instance=comment_instance)
+
+    template = 'community/edit_comment.html'
     context = {
         'form': form,
         'post': post,
