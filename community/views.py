@@ -94,7 +94,7 @@ def comment(request, post_id):
             comment.post = post
             comment.save()
             form.save()
-            messages.success(request, 'Successfully updated post!')
+            messages.success(request, 'Successfully posted a comment!')
             return redirect(reverse('community'))
         else:
             messages.error(request, 'Failed to post comment. Please ensure the form is valid.')
@@ -111,7 +111,7 @@ def comment(request, post_id):
 
 
 def edit_comment(request, post_id, comment_id):
-    """A view to comment another users post"""
+    """A view to edit comments"""
     post = get_object_or_404(Post, pk=post_id)
     comment_instance = get_object_or_404(Comment, pk=comment_id)
 
@@ -134,6 +134,15 @@ def edit_comment(request, post_id, comment_id):
     context = {
         'form': form,
         'post': post,
+        'comment': comment_instance,
     }
 
     return render(request, template, context)
+
+
+def delete_comment(request, post_id, comment_id):
+    post = get_object_or_404(Post, pk=post_id)
+    comment_instance = get_object_or_404(Comment, pk=comment_id)
+    comment_instance.delete()
+    messages.success(request, 'Comment deleted!')
+    return redirect(reverse('community'))

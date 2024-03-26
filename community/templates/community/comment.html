@@ -1,4 +1,5 @@
 {% extends "community_base.html" %}
+{% load crispy_form_tags %}
 {% load static %}
 
 {% block page_header %}
@@ -14,7 +15,7 @@
     <div class="row">
         <div class="col-12 col-lg-6 offset-lg-3">
             <div class="card border-black">
-                <form action="{% url 'comment' post.id %}" method="POST" class="form" enctype="multipart/form-data">
+                <form action="{% url 'comment' post.id %}" method="POST" class="form">
                     {% csrf_token %}
                     {{ form|crispy}}
                     <div class="text-center">

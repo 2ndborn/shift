@@ -83,8 +83,10 @@
                                 <hr>
                                 <p class="card-text mt-4">{{ comment.comment }}</p>
                                 <div class="text-right">
-                                    <a href="" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
-                                    <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                                    {% if comment.id %}
+                                        <a href="{% url 'delete_comment' post.id comment.id %}" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                                    {% endif %}
                                 </div>
                             </div>
                             {% endfor %}
