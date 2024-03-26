@@ -30,6 +30,9 @@ def community(request):
 
 def post(request):
     """A view to return the users post"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -52,6 +55,9 @@ def post(request):
 
 def edit_post(request, post_id):
     """A view to edit the users post"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
@@ -75,6 +81,9 @@ def edit_post(request, post_id):
 
 def delete_post(request, post_id):
     """A view to delete the users post"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     post = get_object_or_404(Post, pk=post_id)
     post.delete()
     messages.success(request, 'Post deleted!')
@@ -83,6 +92,9 @@ def delete_post(request, post_id):
 
 def comment(request, post_id):
     """A view to comment another users post"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     post = get_object_or_404(Post, pk=post_id)
     comment_instance = None
 
@@ -112,6 +124,9 @@ def comment(request, post_id):
 
 def edit_comment(request, post_id, comment_id):
     """A view to edit comments"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     post = get_object_or_404(Post, pk=post_id)
     comment_instance = get_object_or_404(Comment, pk=comment_id)
 
@@ -141,6 +156,10 @@ def edit_comment(request, post_id, comment_id):
 
 
 def delete_comment(request, post_id, comment_id):
+    """A view to delete a comment"""
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you need to login or register to view this page.')
+        return redirect(reverse('home'))   
     post = get_object_or_404(Post, pk=post_id)
     comment_instance = get_object_or_404(Comment, pk=comment_id)
     comment_instance.delete()
