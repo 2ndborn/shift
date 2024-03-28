@@ -46,7 +46,13 @@
                             <a href="#customer_reviews">({{ num_reviews }})</a>
                         </small>
                     {% else %}
-                        <small class="text-muted" role="button" data-toggle="tooltip" data-placement="top" title="Review this product">No Rating </small>
+                        {% if user.is_authenticated %}
+                            <a href="#leave_a_review">
+                                <small class="text-muted" data-toggle="tooltip" data-placement="top" title="Review this product">No Reviews </small>
+                            </a>
+                        {% else %}
+                            <small class="text-muted">No Reviews</small>
+                        {% endif %}
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
@@ -116,6 +122,7 @@
         </div>
         <hr> 
     </div>
+    {% if user.is_authenticated %}
     <div class="container">
         <div class="row">
             <div class="col">
@@ -124,6 +131,8 @@
         </div>
     </div>
     <hr>
+    {% endif %}
+    {% if reviews > 0 %}
     <div class="row">
         <div class="col text-center">
             <a name="customer_reviews">
@@ -131,6 +140,7 @@
             </a>
         </div>        
     </div>
+    {% endif %}
     <div class="container">    
         <div class="row">
             {% for review in reviews %}
@@ -146,8 +156,6 @@
                         <i class="fa fa-star {% if review.rating > 4 %} checked {% else %} d-none {% endif %}"></i>
                         <hr>
                         <p class="card-text">{{ review.review }}</p>
-                        <p>{{ review.user }}</p>
-                        <p>{{ request.user }}</p>
                         {% if review.user.user == request.user %}
                             <div class="row">
                                 <div class="col">
@@ -171,5 +179,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

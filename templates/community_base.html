@@ -40,7 +40,7 @@
         <div class="col-4"></div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
             <a href="{% url 'home' %}" class="nav-link main-link">
-                <h1 class="text-danger">SH<span class="text-black"><strong>i</strong></span>FT</h1>
+                <h1 class="text-danger">SH<span class="text-black"><strong>i</strong></span>FT Commun<span class="text-black"><strong>i</strong></span>ty</h1>
             </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -52,21 +52,23 @@
             </ul>
         </div>
     </div>
-    <div class="col-12 col-lg-4 offset-lg-4 my-auto py-1 py-lg-0">
-        <form action="" method="get">
-            <div class="input-group w-100">
-                <input type="text" name="q" placeholder="Find other members" class="form-control border border-black rounded-pill"/>
-                <div class="input-group-append">
-                    <button type="submit" class="form-control btn btn-danger">
-                        <span class="icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </button>
+    <div class="row">
+        <div class="col-12 my-auto px-0">
+            <form action="{% url 'post' %}" method="get">
+                <div class="input-group w-100">
+                    <input type="text" name="q" placeholder="" class="form-control border border-black rounded-0" />
+                    <div class="input-group-append">
+                        <button type="submit" class="form-control btn btn-black border border-black">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</header>
+    </header>
 
 {% if messages %}
     <div class="message-container">
@@ -89,4 +91,9 @@
 {% block page_header %}
 {% endblock %}
 {% block content %}
+{% endblock %}
+{% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
 {% endblock %}

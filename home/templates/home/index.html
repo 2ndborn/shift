@@ -34,13 +34,21 @@
             <div class="row h-100">
                 <div class="col-7 col-md-6 my-auto">
                     <h1 class="display-4 logo-font text-black">
-                        Embrace your desire to change. Let us provide the structure
+                        Join our community of fitness enthusiasts!
                     </h1>
-                    <div class="my-5">
-                        <h4>
-                            <a href="{% url 'subscription' %}" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Find Out More</a>
-                        </h4>
-                    </div>
+                    {% if user.is_authenticated %}
+                        <div class="my-5">
+                            <h4>
+                                <a href="{% url 'community' %}" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Talk to us</a>
+                            </h4>
+                        </div>
+                    {% else %}
+                        <div class="my-5">
+                            <h4>
+                                <a href="{% url 'account_signup' %}" class="shop-now-button btn btn-ls rounded-0 text-uppercase py-3">Sign Up</a>
+                            </h4>
+                        </div>
+                    {% endif %}
                 </div>    
             </div>
         </div> 

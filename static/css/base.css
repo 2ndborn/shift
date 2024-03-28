@@ -28,6 +28,10 @@ body {
     background-image: url('/media/people.bg.jpg');
 }
 
+.community-bg {
+    background-image: url('/media/community.bg.jpg');
+}
+
 .sub-image {
     height: 100vh;
     background-repeat: no-repeat;
@@ -37,6 +41,13 @@ body {
 
 .carousel-image {
     height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.community-image {
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -365,6 +376,10 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
 
     .header-container {
         padding-top: 164px;
+    }
+
+    .community-header-container {
+        padding-top: 118px;
     }
 }
 
