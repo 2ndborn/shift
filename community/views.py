@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from django.views import View
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
@@ -19,10 +20,22 @@ def community(request):
     """A view to return the community page""" 
     posts = Post.objects.all()
     comments = Comment.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "User doesn't exist")
+                return redirect(reverse('community'))
+
+            queries = Q(member__username__icontains=query)
+            posts = posts.filter(queries)
 
     context = {
         'post_list': posts,
         'comment_list': comments,
+        'search_term': query
     }
 
     return render(request, 'community/community.html', context)

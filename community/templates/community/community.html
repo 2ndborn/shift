@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container community-header-container">
+<div class="container community-header-container ">
     <div class="row">
         <div class="col"></div>
     </div>
@@ -17,7 +17,7 @@
                 <div class="col-12 col-lg-6 offset-lg-3">
                     <div class="card border border-secondary">
                         <div class="card-body">
-                            <a href="{% url 'post' %}" class="text-muted btn btn-block btn-transparent border border-secondary rounded-pill text-left pl-4">
+                            <a href="{% url 'post' %}" class="text-dark btn btn-block btn-transparent border border-secondary rounded-pill text-left pl-4">
                                 Share your thoughts...
                             </a>
                         </div>
@@ -29,7 +29,7 @@
             {% for post in post_list %}
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3 my-2">
-                    <div class="card border border-secondary">
+                    <div class="card border border-secondary bg">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6">
@@ -39,19 +39,23 @@
                                     <small class="text-muted my-2">{{ post.created_on }}</small>
                                 </div>
                             </div>
-                            <hr>
-                            <p class="card-text">{{ post.content }}</p>
-                            <hr>
-                            {% if post.image %}
-                                <img class="card-image-bottom w-100 mb-3" src="{{ post.image.url }}" >
-                            {% endif %}
-                            <div class="row mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">{{ post.content }}</p>
+                                    {% if post.image %}
+                                        <img class="card-image-bottom w-100 mb-3" src="{{ post.image.url }}" >
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% if request.user == post.member %}
+                            <div class="row my-3">
                                 <div class="col text-right">
                                     <a href="{% url 'comment' post.id %}" class="btn-sm btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
-                                    <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                     <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                                 </div>
                             </div>
+                            {% endif %}
                             <hr>
                             <div>
                                 <div>
@@ -72,7 +76,7 @@
                                     {% if comment.member == request.user %}
                                     <div class="text-right">
                                         {% if comment.id %}
-                                            <a href="{% url 'delete_comment' post.id comment.id %}" class="btn-sm btn-secondary rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                            <a href="{% url 'delete_comment' post.id comment.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                             <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                                         {% endif %}
                                     </div>
