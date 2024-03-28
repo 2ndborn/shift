@@ -35,7 +35,7 @@ def community(request):
     context = {
         'post_list': posts,
         'comment_list': comments,
-        'search_term': query
+        'search_term': query,
     }
 
     return render(request, 'community/community.html', context)

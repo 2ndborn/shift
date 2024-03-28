@@ -15,10 +15,10 @@
         <div class="container my-">
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3">
-                    <div class="card border border-secondary">
-                        <div class="card-body">
-                            <a href="{% url 'post' %}" class="text-dark btn btn-block btn-transparent border border-secondary rounded-pill text-left pl-4">
-                                Share your thoughts...
+                    <div class="card border border-black">
+                        <div class="card-body bg-light">
+                            <a href="{% url 'post' %}" class="text-dark btn btn-block border border-dark rounded-pill text-left pl-4">
+                                <strong>Share your thoughts...</strong>
                             </a>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
             {% for post in post_list %}
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3 my-2">
-                    <div class="card border border-secondary bg">
-                        <div class="card-body">
+                    <div class="card border border-black">
+                        <div class="card-body bg-light">
                             <div class="row">
                                 <div class="col-6">
                                     <h5 class="card-title">{{ post.member }}</h5>
@@ -39,7 +39,7 @@
                                     <small class="text-muted my-2">{{ post.created_on }}</small>
                                 </div>
                             </div>
-                            <div class="card">
+                            <div class="card border-dark">
                                 <div class="card-body">
                                     <p class="card-text">{{ post.content }}</p>
                                     {% if post.image %}
@@ -62,7 +62,7 @@
                                     <a class="text-muted text-left pt-2">Comments</a>
                                 </div>
                                 {% for comment in post.comments.all %}
-                                <div class="card card-body my-4 pb-3">
+                                <div class="card border-dark card-body my-4 pb-3">
                                     <div class="row">
                                         <div class="col-6 card-title">
                                             <h6>From: <strong>{{ comment.member }}</strong></h6>
@@ -71,7 +71,7 @@
                                             <small class="text-muted">{{ comment.created_on }}</small>
                                         </div>
                                     </div>
-                                    <hr>
+                                    <hr class="border-secondary">
                                     <p class="card-text mt-4">{{ comment.comment }}</p>
                                     {% if comment.member == request.user %}
                                     <div class="text-right">
@@ -90,7 +90,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="btt-button shadow-sm rounded-0 border border-danger">
+        <div class="btt-button shadow-sm rounded border border-danger">
             <a class="btt-link d-flex h-100">
                 <i class="fas fa-arrow-up text-white mx-auto my-auto"></i>
             </a>	

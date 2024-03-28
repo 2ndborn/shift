@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+header {
+    background-color: #dce1e6;
+}
+
 body {
     font-family: 'caveat';
 }
