@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['shiftv1-3ed21a1cd545.herokuapp.com', '8000-2ndborn-shift-79eiaytri6.us1.codeanyapp.com']
+ALLOWED_HOSTS = ['shiftv1-3ed21a1cd545.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -126,9 +126,9 @@ WSGI_APPLICATION = 'shift.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 else:
     DATABASES = {
     'default': {
