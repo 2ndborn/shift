@@ -76,15 +76,10 @@
                                                 </a>
                                             </p>
                                         {% endif %}
-                                        {% if review_score %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ review_score }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}
                                         {% if request.user.is_superuser %}
                                         <small class="ml-3">
-                                            <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            <a class="btn-sm btn-primary" href="{% url 'edit_product' product.id %}">Edit</a>
+                                            <a class="btn-sm btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                         </small>
                                         {% endif %}
                                     </div>

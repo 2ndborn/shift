@@ -16,8 +16,9 @@ class PostListView(View):
 
         return render(request, 'community/community.html', context)
 
+
 def community(request):
-    """A view to return the community page""" 
+    """A view to return the community page"""
     posts = Post.objects.all()
     comments = Comment.objects.all()
     query = None
@@ -172,7 +173,7 @@ def delete_comment(request, post_id, comment_id):
     """A view to delete a comment"""
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, you need to login or register to view this page.')
-        return redirect(reverse('home'))   
+        return redirect(reverse('home'))
     post = get_object_or_404(Post, pk=post_id)
     comment_instance = get_object_or_404(Comment, pk=comment_id)
     comment_instance.delete()

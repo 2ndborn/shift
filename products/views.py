@@ -8,7 +8,6 @@ from django.db.models import Avg
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 
-# Create your views here.
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
@@ -76,6 +75,7 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
 @login_required
 def add_product(request):
     """ Add a product to the store """
@@ -100,6 +100,7 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_product(request, product_id):
@@ -157,7 +158,7 @@ def add_review(request, product_id):
         else:
             messages.error(request, 'There was an error with your review.')
     else:
-        form = ReviewForm(instance=review)    
+        form = ReviewForm(instance=review)
 
 
 @login_required
@@ -197,21 +198,3 @@ def delete_review(request, product_id, review_id):
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))   
-
-
-def view_review(request, product_id):
-    """ to view reviews """
-    review = Review.objects.filter(product=product)
-    num_reviews = reviews.count()
-    review_score = Review.objects.aggregate(Avg('rating', default=0))
-    context = {
-        'reviews': reviews,
-        'num_reviews': num_reviews,
-        'review_score': review_score,
-    }
-
-
-def subscription(request):
-    """A view to render the subscription page"""
-
-    return render(request, 'products/subscription.html')

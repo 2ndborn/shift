@@ -14,5 +14,6 @@ class CommentAdmin(admin.ModelAdmin):
         'comment',
     )
 
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
