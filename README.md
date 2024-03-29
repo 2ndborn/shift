@@ -19,73 +19,108 @@ To generate an income from subscriptions and products.
 
 ### Shopper
 **Viewing & navigation**
-|I want to be able to...|so that I can|
-|--|--|
-|view a list of exercise plans and products|Select some things to purchase|
-|view individual plans and products|look ast the price, descriptions and reviews|
-|easily view my basket total|I am aware of how much I'm spending|
+*	I want to be able to view individual products so that I can look at the price, descriptions and reviews.
+*	I want to be able to easily view my basket total so that I can keep track of how much I'm spending.
+
+![View Products](/media/all.products.jpg)
+![View Product Details](/media/product.details.jpg)
+![View Basket](/media/bag.jpg)
+
 **Sorting & Searching**
-|I want to be able to...|so that I can|
-|--|--|
-|sort the list of available products|find the best rated, best priced and categorically sort products|
-|sort a specific category of availabe products|Find the best rated, best priced in a specific category or sort products in that category by name|
-|sort multiple categories of products simultaneously|find the best priced or best reated products across broad categories, such as supplements or equipment|
-|easily see what I've searched for|quickly decide whether the product I want is available|
-|search for a product by name or description|find a specific product I'd like to purchase|
+*	I want to be able to sort the list of available products so that I can find the best rated, best priced and categorically sort products.
+*	I want to be able to sort a specific category of availabe products so that I can Find the best rated, best priced in a specific category or sort products in that category by name.
+*	I want to be able to sort multiple categories of products simultaneously so that I can find the best priced or best reated products across broad categories, such as supplements or equipment.
+*	I want to be able to easily see what I've searched for so that I can quickly decide whether the product I want is available.
+*	I want to be able to search for a product by name or description so that I can find a specific product I'd like to purchase.
+
+![Sort alphabetically](/media/sort.alpha.jpg)
+![Sort categorically](/media/sort.category.jpg)
+![Sort price](/media/sort.price.jpg)
+![clothes](/media/clothes.jpg)
+![Equipment](/media/equipment.jpg)
+![supplements](/media/supplements.jpg)
+
 **Purchasing & Checkout**
-|I want to be able to...|so that I can|
-|--|--|
-|select the quantity of a product when purchasing it|ensure I get how much I need|
+*	I want to be able to select the quantity of a product when purchasing it so that I can ensure I get how much I need.
+
+![Checkout](/media/checkout.jpg)
+![Checkout Summary](/media/checkout.summary.jpg)
 
 ### Site Users
 **Viewing & navigation**
-|I want to be able to...|so that I can|
-|--|--|
-|view a list of other subscribers|see who I would like to connect with and share ideas|
-|view a list of my posts and conversations|easily track what I've posted|
-|view the community page|keep up to date with the community|
+*	I want to be able to view a list of my posts and conversations so that I can I want to be able to  so that I can easily track what I've posted.
+*	I want to be able to view posts of the community so that I can  page keep up to date with the community.
+*	I want to be able to  so that I can .
+
+![Community Home](/media/community.jpg)
 
 **Registration & User Account**
-|I want to be able to...|so that I can|
-|--|--|
-|register for an account|have a personal account and to view my profile|
-|login or logout|access my personal account information|
-|recover password if I forget|recover access to my account|
-|receive an email confirming a successful registration|verify that I have registered successfully|
-|have a personalised user profile|view my order history, confirmations, save my payment info, add a photo and, info about myself, subscribtion details|
-|register using my social media account|limit the number of passwords to remember|
+*	I want to be able to register for an account so that I can have a personal account and to view my profile.
+*	I want to be able to login or logout so that I can access my personal account information.
+*	I want to be able to recover password if I forget so that I can recover access to my account.
+*	I want to be able to receive an email confirming a successful registration so that I can verify that I have registered successfully.
+*	I want to be able to have a user profile so that I can view my order history, confirmations, save my payment info.
+*   I want to be able see the customer reviews so that I can make an informed choice to purchase a product.
+*   I want to be able to create product review so that I can share my experiences with others that use the site.
+
+![Register](/media/reg)
+![Sign Out](/media/sign.out.jpg)
+![Log Out](/media/sign.out.jpg)
+![Reset Password](/media/reset.password.jpg)
+![Password Reset Confirm](/media/password.reset.confirm.jpg)
+![Verify Password](/media/verify.email..jpg)
+![Confirm Email](/media/confirm.email.jpg)
+![Change Password](/media/change.password.jpg)
+![Profile](/media/profile.personal.jpg)
+![Profile Orders](/media/profile.order.jpg)
+![Review](/media/prod.det.review.jpg)
+![Customer Reviews](/media/prod.det.review.jpg)
+![Sort price](/media/review.form.jpg)
+
+
 **Sorting & Searching**
-|I want to be able to...|so that I can|
-|--|--|
-|search for other community users by name or location|connect with them and discuss progress|
+*	I want to be able to search for other community users by name or location so that I can see what information they are providing.
+
+![Search Posts](/media/search.post.jpg)
+
 **Community**
-|I want to be able to...|so that I can|
-|--|--|
-|post a blog|upload a photo/video and share my experience with the community|
-|comment on a blog|share my support for that person|
-|Like a post|so support without having to post a comment|
-|rate a product and write a review|support without having to post a comment|
+*	I want to be able to post a blog so that I can upload a photo and share my experience with the community.
+*	I want to be able to comment on a blog so that I can share my support for that person.
+*	I want to be able to rate a product and write a review so that I can support without having to post a comment.
+*	
+![Post](/media/post.jpg)
+![Edit Post]()
+![Comment](/media/comment.jpg)
+![Edit Comment](/media/edit.commit.jpg)
+
 ## Future Features
 * User will have the option to pick from multiple plans in exchange for a higher subscribtion fee.
+* User will be able to sign up to a subscription package where they will get montly Exercise and Meal Plans.
 * Private messaging between connected subscribers
+* Users will be able to customise their profiles.
 ## Typography & Colour
+*	Caveat has been used for the font.
+*	Bootstrap colour scheme has been used to for the follow:
+	*	text-danger and text-black for the logo.
+	*	text-dark and text-white for the buttons.
+	*	text-danger and text-info for the checkout bag.
+	*	bg-light for the background colour
+	*	text-black, text-white and text-muted for the font.
+*	#ffc107 (Yellow) for the review stars.
 
 ## Wireframes
-![Base Template](/media/Original.jpg)
-![Home Page](/media/Home%20page.jpg)
-![Package Page](/media/Package%20detail.jpg)
-![Products](/media/Products%20page.jpg)
-![Product detail](/media/Product%20details.jpg)
-![Checkout Page](/media/Checkout%20page.jpg)
-![Checkout Summary Page](/media/Checkout%20summary%20page.jpg)
-![Basket Page](/media/Basket.jpg)
-![Profile Page](/media/Profile%20Page.jpg)
-![Reviews Page](/media/Reviews.jpg)
-![Subscription Page](/media/Subscription%20page.jpg)
-![Sign In Page](/media/Sign%20In.jpg)
-![Register Page](/media/Register.jpg)
-![Your Plan Page](/media/Your%20Plan.jpg)
-![Community Page](/media/Community%20page.jpg)
+![Base Template](/media/base.html.jpg)
+![Home Page](/media/home.wf.jpg)
+[Products](/media/products.wf.jpg)
+![Product detail](/media/product.details.wf.jpg)
+![Checkout](/media/checkout.wf.jpg)
+![Checkout Summary](/media/checkout.summary.wf.jpg)
+![Basket](/media/basket.wf.jpg)
+![Profile](/media/profile.wf.jpg)
+![Reviews](/media/reviews.wf.jpg)
+![Sign In](/media/sign-in.wf.jpg)
+![Register](/media/register.wf.jpg)
+![Community](/media/community.wf.jpg)
 
 ## Technology
 
@@ -98,8 +133,7 @@ To generate an income from subscriptions and products.
 - [Google fonts](https://fonts.google.com/) to search for the right fonts for the website
 - [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)  to create forms and buttons.
 - Chrome Developer Tools for device testing.
-- Google Lighthouse to text site performance.
-- [wall.alphacoders.com](https://wall.alphacoders.com/big.php?i=1342052) for the background image.
+
 ## Testing
 ### Code Validation
 ### Test Cases
