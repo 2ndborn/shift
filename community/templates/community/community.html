@@ -12,7 +12,7 @@
 {% block content %}
     <div class="community-bg community-image py-3">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
-        <div class="container my-">
+        <div class="container my-3">
             <div class="row">
                 <div class="col-12 col-lg-6 offset-lg-3">
                     <div class="card border border-black">
@@ -50,9 +50,9 @@
                             <div class="row my-3">
                                 <div class="col text-right">
                                     <a href="{% url 'comment' post.id %}" class="btn-sm btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
-                                    {% if request.user == post.member %}
-                                    <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
-                                    <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                                    {% if post.member == user %}
+                                        <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
+                                        <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                                     {% endif %}
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                     </div>
                                     <hr class="border-secondary">
                                     <p class="card-text mt-4">{{ comment.comment }}</p>
-                                    {% if comment.member == user %}
+                                    {% if request.user == comment.member %}
                                         <div class="text-right">
                                             <a href="{% url 'delete_comment' post.id comment.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                             <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>

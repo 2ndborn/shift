@@ -350,6 +350,10 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
     color: #ffc107;
 }
 
+.post-card-style {
+    padding-bottom: 250px;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
