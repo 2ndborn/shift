@@ -387,8 +387,16 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
 }
 
 @media (max-width: 992px) {
+    .community-header-container {
+        padding-top: 164px;
+    }
+
+    .card-style {
+        margin-top: 88px;
+    }
+
     .header-container {
-        padding-top: 116px;
+        padding-top: 114px;
     }
 
     .display-4 .logo-font .text-black {

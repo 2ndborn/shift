@@ -47,15 +47,15 @@
                                     {% endif %}
                                 </div>
                             </div>
-                            {% if request.user == post.member %}
                             <div class="row my-3">
                                 <div class="col text-right">
                                     <a href="{% url 'comment' post.id %}" class="btn-sm btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
+                                    {% if request.user == post.member %}
                                     <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                     <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
+                                    {% endif %}
                                 </div>
                             </div>
-                            {% endif %}
                             <hr>
                             <div>
                                 <div>
@@ -73,13 +73,11 @@
                                     </div>
                                     <hr class="border-secondary">
                                     <p class="card-text mt-4">{{ comment.comment }}</p>
-                                    {% if comment.member == request.user %}
-                                    <div class="text-right">
-                                        {% if comment.id %}
+                                    {% if comment.member == user %}
+                                        <div class="text-right">
                                             <a href="{% url 'delete_comment' post.id comment.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                             <a href="{% url 'edit_comment' post.id comment.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
-                                        {% endif %}
-                                    </div>
+                                        </div>
                                     {% endif %}
                                 </div>
                                 {% endfor %}
