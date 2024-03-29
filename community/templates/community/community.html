@@ -50,7 +50,7 @@
                             <div class="row my-3">
                                 <div class="col text-right">
                                     <a href="{% url 'comment' post.id %}" class="btn-sm btn-success rounded-pill"><i class="fa-solid fa-comment"></i></a>
-                                    {% if request.user.is_superuser | request.user == post.member %}
+                                    {% if request.user == post.member %}
                                     <a href="{% url 'delete_post' post.id %}" class="btn-sm btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></a>
                                     <a href="{% url 'edit_post' post.id %}" class="btn-sm btn-primary rounded-pill"><i class="fa-solid fa-pen"></i></a>
                                     {% endif %}
