@@ -136,6 +136,13 @@ To generate an income from subscriptions and products.
 
 ## Testing
 ### Code Validation
+### Code Validation
+#### HTML
+#### CSS
+#### JavaScript
+#### Python
+**Bag**
+context.py![Bag](/media/bag.context.png)
 ### Test Cases
 **Home page**
 
