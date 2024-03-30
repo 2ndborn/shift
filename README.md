@@ -139,10 +139,45 @@ To generate an income from subscriptions and products.
 ### Code Validation
 #### HTML
 #### CSS
+Base.css![Base.css](/media/base.css.png)
+Checkout.css![Checkout.css](/media/checkout.css.png)
+Profiles.css![profile.css](/media/profile.css.png)
 #### JavaScript
 #### Python
 **Bag**
 context.py![Bag](/media/bag.context.png)
+Urls.py![Bag](/media/bag.urls.png)
+Views.py![Bag](/media/bag.views.png)
+**Checkout**
+Admin.py![Checkout](/media/checkout.admin.png)
+Forms.py![Checkout](/media/checkout.forms.png)
+Models.py![Checkout](/media/checkout.models.png)
+Signals.py![Checkout](/media/checkout.signals.png)
+Urls.py![Checkout](/media/checkout.urls.png)
+Views.py![Checkout](/media/checkout.views.png)
+Webhooks_handlers![Checkout](/media/checkout.webhook_hand.png)
+Webhooks![Checkout](/media/checkout.webhooks.png)
+**Community**
+Admin.py![Community](/media/com.admin.png)
+Forms.py![Community](/media/com.forms.png)
+Models.py![Community](/media/com.models.png)
+Urls.py![Community](/media/com.urls.png)
+Views.py![Community](/media/com.views.png)
+**Home**
+Urls.py![Home](/media/home.urls.png)
+Views.py![Home](/media/home.views.png)
+**Products**
+Admin.py![Products](/media/products.admin.png)
+Forms.py![Products](/media/products.forms.png)
+Models.py![Products](/media/products.models.png)
+Urls.py![Products](/media/products.urls.png)
+Views.py![Products](/media/products.urls.png)
+Widgets.py![Products](/media/products.widgets.png)
+**Profiles**
+Forms.py![Profiles](/media/profiles.forms.png)
+Models.py![Profiles](/media/products.models.png)
+Urls.py![Profiles](/media/products.urls.png)
+Views.py![Profiles](/media/products.views.png)
 ### Test Cases
 **Home page**
 
