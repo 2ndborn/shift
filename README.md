@@ -136,13 +136,20 @@ To generate an income from subscriptions and products.
 
 ## Testing
 ### Code Validation
-### Code Validation
 #### HTML
 #### CSS
 Base.css![Base.css](/media/base.css.png)
 Checkout.css![Checkout.css](/media/checkout.css.png)
 Profiles.css![profile.css](/media/profile.css.png)
 #### JavaScript
+Back to top![back to top](/media/js.back.to.top.png)
+Bagtools[Bagtools](/media/js.bagtools.png)
+Countryfield![Countryfield](/media/js.countryfield.png)
+New Image![New Image](/media/js.new.image.png)
+Product sort![Product sort](/media/js.product.sort.png)
+Quantity![Quantity](/media/js.quantityscript.png)
+Stripe![Stripe](/media/js.stripe.element.png)
+Toasts![Toasts](/media/js.toasts.png)
 #### Python
 **Bag**
 context.py![Bag](/media/bag.context.png)

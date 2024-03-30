@@ -122,9 +122,9 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo(0,0)
-    })
+    $(".btt-link").click(function(e) {
+        window.scrollTo(0,0);
+    });
 </script>
 
 <script type="text/javascript">
@@ -133,7 +133,7 @@
         let currentUrl = new URL(window.location);
 
         let selectedVal = selector.val();
-        if(selectedVal != "reset"){
+        if(selectedVal !== "reset"){
             let sort = selectedVal.split("_")[0];
             let direction = selectedVal.split("_")[1];
 
@@ -147,7 +147,7 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 </script>
 {% endblock %}
 
