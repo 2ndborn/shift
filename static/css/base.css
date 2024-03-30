@@ -430,5 +430,10 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+}
 
+@media (max-width: 300px) {
+    .title-margin {
+        margin-top: 48px;
+    }
 }
