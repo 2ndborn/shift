@@ -325,6 +325,55 @@ Early on I wanted to create a carousel on the home page, but bootstrap only tell
 I wanted to create a start rating system for the users to review the products, but it didn't know where to start. I eventually searched star reviews on youtube and came across a guy call Rathan Kumer. I watched the 4 videos that he post which greatly helped me. [YouTube Video](https://youtu.be/Zkmu93lMLPs?si=tgyr2me_NyLLauK_)
 
 ### Browser Testing
+#### Chrome
+![Home](/media/chrome.home.jpg)
+![Registration](/media/chrome.reg.jpg)
+![Sign In](/media/chrome.sign.in.jpg)
+![All Products](/media/chrome.prod.jpg)
+![Product Details](/media/chrome.prod.det.jpg)
+![Bag](/media/chrome.bag.jpg)
+![Checkout](/media/chrome.checkout.jpg)
+![Checkout Summary](/media/chrome.check.sum.jpg)
+![Profile](/media/chrome.profile.jpg)
+![Community](/media/chrome.com.jpg)
+![Sign Out](/media/chrome.sign.out.jpg)
+
+#### Edge
+![Home](/media/edge.home.jpg)
+![Registration](/media/edge.reg.jpg)
+![Sign In](/media/edge.sign.in.jpg)
+![All Products](/media/edge.prod.jpg)
+![Product Details](/media/edge.prod.det.jpg)
+![Bag](/media/edge.bag.jpg)
+![Checkout](/media/edge.checkout.jpg)
+![Checkout Summary](/media/edge.check.sum.jpg)
+![Profile](/media/edge.profile.jpg)
+![Community](/media/edge.com.jpg)
+![Sign Out](/media/edge.sign.out.jpg)
+#### FireFox
+![Home](/media/fire.home.jpg)
+![Registration](/media/fire.reg.jpg)
+![Sign In](/media/fire.sign.in.jpg)
+![All Products](/media/fire.prod.jpg)
+![Product Details](/media/fire.prod.det.jpg)
+![Bag](/media/fire.bag.jpg)
+![Checkout](/media/fire.checkout.jpg)
+![Checkout Summary](/media/fire.check.sum.jpg)
+![Profile](/media/fire.profile.jpg)
+![Community](/media/fire.com.jpg)
+![Sign Out](/media/sign.out.jpg)
+#### Opera
+![Home](/media/opera.home.jpg)
+![Registration](/media/opera.reg.jpg)
+![Sign In](/media/op.sign.in.jpg)
+![All Products](/media/opera.prod.jpg)
+![Product Details](/media/opera.prod.det.jpg)
+![Bag](/media/op.bag.jpg)
+![Checkout](/media/op.checkout.jpg)
+![Checkout Summary](/media/op.chec.sum.jpg)
+![Profile](/media/op.profile.jpg)
+![Community](/media/op.com.jpg)
+![Sign Out](/media/op.sign.out.jpg)
 ## Deployment
 ### Codeanywhere
 
