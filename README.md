@@ -139,7 +139,7 @@ To generate an income from subscriptions and products.
 ### Code Validation
 #### HTML
 #### CSS
-Base.css![Base.css](/media/base.css.png)
+Base.css![Base.css](/media/base.css)
 Checkout.css![Checkout.css](/media/checkout.css.png)
 Profiles.css![profile.css](/media/profile.css.png)
 #### JavaScript
