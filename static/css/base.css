@@ -432,7 +432,7 @@ input:checked ~ label:hover ~ label, label:hover ~ input:checked ~ label {
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 280px) {
     .title-margin {
         margin-top: 48px;
     }
