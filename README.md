@@ -319,6 +319,20 @@ When the all products option is selected from the my the navigation bar does it 
 ### Test Procedure
 I employed a manual test procedure that involved a series of questions about the websites based on the user stories.
 ### Device Testing
+#### 1024
+![1024](/media/1024.jpg)
+#### 820
+![820](/media/820.jpg)
+#### 768
+![768](/media/768.jpg)
+#### 540
+![540](/media/540.jpg)
+#### 430
+![430](/media/430.jpg)
+#### 390
+![390](/media/390.jpg)
+#### 280
+![280](/media/280.jpg)
 ### Fixed Bugs
 Early on I wanted to create a carousel on the home page, but bootstrap only tell how to do it with the <img> tag. I went on YouTube and searched carousel images. I found a very helpful video called "Carousel Responsive Images". This video helped me to put the images in the CSS and style them separate. Although it very common to this it this way, I needed the video just to remind me. [Carousel Video](https://www.youtube.com/watch?v=aCRs_wQAhm0&t=316s)
 
@@ -376,30 +390,27 @@ I wanted to create a start rating system for the users to review the products, b
 ![Sign Out](/media/op.sign.out.jpg)
 ## Deployment
 ### Codeanywhere
-
  1. Go to [https://app.codeanywhere.com/](https://app.codeanywhere.com/)
- 2. In the Workspaces section click on “2ndborn-****”. 
-![codeanywhere workspace](readme.files)
+ 2. In the Workspaces section click on “2ndborn-shift-79eiaytri6”. 
+![codeanywhere workspace](/media/code1.jpg)
  3. Once the page is loaded open a new terminal and type “python3 manage.py runserver”. Then press Enter.
-![terminal](readme.files)
+![terminal](/media/code2.jpg)
  4. Options to open the preview page or the browser will be shown. Click on the browser.
-![port options](readme.files)
+![port options](/media/code3.jpg)
  5. The browser will open.
-![webpage](readme.files)
+![webpage](/media/code4.jpg)
 ### Heroku
 1. Go to [Heroku.com ](https://id.heroku.com/login)
-![heroku_webpage](readme.files/heroku_webpage)
-2. From the home page find the application "m-books" and click on it.
-![heroku_homepage](readme.files/heroku_con_github)
+![heroku_webpage](/media/hero0.jpg)
+2. From the home page find the application "shft-v1" and click on it.
+![heroku_homepage](/media/hero1.jpg)
 3.	Click on the deploy tab.
-![deploy_tab](readme.files/deploy_tab)
-4. Scroll down to deployment method, click on GitHub, search for your repository profile, key in the name of the repository and then press search.
-![heroku_con_github](readme.files/heroku_con_github)
-5. Once the repository has been found click on connect. This will initially the install process.![heroku_install](readme.files/heroku_install)
-6. Once installation ahve been completed, press enable automatic deploy.
-![heroku_enable](readme.files/heroku_enable)
+![deploy_tab](/media/hero2.jpg)
+4. Scroll down to deployment method, click on GitHub, search for your repository profile, key in the name of the repository and then press search. ![heroku_install](/media/hero3.jpg)
+5. Once the repository has been found click on connect. This will initially the install process.![heroku_install](/media/hero4.jpg)
+6. Once installation has been completed, press enable automatic deploy.
+![heroku_enable](/media/hero5.jpg)
 7. Press deploy.
-![heroku_press_deloy](readme.files/heroku_press_deloy)
+![heroku_press_deloy](/media/hero6.jpg)
 8. Finally, click on the Open App button at the top of the page.
-![heroku_open_app](readme.files/heroku_open_app)
-> Written with [StackEdit](https://stackedit.io/).
+![heroku_open_app](/media/hero7.jpg)
