@@ -24,7 +24,7 @@ To generate an income from subscriptions and products.
 
 ![View Products](/media/all.products.jpg)
 ![View Product Details](/media/product.details.jpg)
-![View Basket](/media/bag.jpg)
+![View Basket](/media/Basket.jpg)
 
 **Sorting & Searching**
 *	I want to be able to sort the list of available products so that I can find the best rated, best priced and categorically sort products.
@@ -63,7 +63,7 @@ To generate an income from subscriptions and products.
 *   I want to be able see the customer reviews so that I can make an informed choice to purchase a product.
 *   I want to be able to create product review so that I can share my experiences with others that use the site.
 
-![Register](/media/reg)
+![Register](/media/registration.jpg)
 ![Sign Out](/media/sign.out.jpg)
 ![Log Out](/media/sign.out.jpg)
 ![Reset Password](/media/reset.password.jpg)
