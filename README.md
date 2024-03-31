@@ -476,3 +476,5 @@ I wanted to create a start rating system for the users to review the products, b
 ![heroku_press_deloy](/media/hero6.jpg)
 8. Finally, click on the Open App button at the top of the page.
 ![heroku_open_app](/media/hero7.jpg)
+
+Live link https://shift-v1-d8f667a6ca2b.herokuapp.com/
