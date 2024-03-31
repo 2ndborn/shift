@@ -53,7 +53,7 @@ def post(request):
             post = form.save(commit=False)
             post.member = request.user
             post.save()
-            messages.success(request, 'Successfully post!')
+            messages.success(request, 'Successfully posted!')
             return redirect(reverse('community'))
         else:
             messages.error(request, 'Failed to add post. Please ensure the form is valid.')

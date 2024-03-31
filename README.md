@@ -137,13 +137,26 @@ To generate an income from subscriptions and products.
 ## Testing
 ### Code Validation
 #### HTML
+Home![Home](/media/html.home.png)
+Bag![Bag](/media/html.bag.png)
+Checkout![Checkout](/media/html.checkout.png)
+Checkout Summary![Checkout Summary](/media/html.checkout.summary.png)
+Products![Products](/media/html.products.png)
+Products Details![Products Details](/media/html.product.detail.png)
+Edit Review![Edit Review](/media/html.edit.review.png)
+Community![Community](/media/html.community.png)
+Post![Post](/media/html.post.png)
+Edit Post![Edit Post](/media/html.edit.post.png)
+Comment![Comment](/media/html.comment.png)
+Edit Comment![Edit Comment](/media/html.edit.commet.png)
+Profile![Profile](/media/html.profile.png)
 #### CSS
 Base.css![Base.css](/media/base.css.png)
 Checkout.css![Checkout.css](/media/checkout.css.png)
 Profiles.css![profile.css](/media/profile.css.png)
 #### JavaScript
 Back to top![back to top](/media/js.back.to.top.png)
-Bagtools[Bagtools](/media/js.bagtools.png)
+Bagtools![Bagtools](/media/js.bagtools.png)
 Countryfield![Countryfield](/media/js.countryfield.png)
 New Image![New Image](/media/js.new.image.png)
 Product sort![Product sort](/media/js.product.sort.png)

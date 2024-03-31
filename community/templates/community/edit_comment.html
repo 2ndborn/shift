@@ -10,15 +10,20 @@
 {% endblock %}
 
 {% block content %}
+    <div class="row">
+        <div class="col text-center">
+            <h3 class="my-5">Share Your Thoughts...</h3>
+        </div>        
+    </div>
    <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6 offset-lg-3">
-            <div class="card border-black card-style">
+            <div class="card border-black bg-light card-style p-3 mb-5">
                 <form action="{% url 'edit_comment' post.id comment.id %}" method="POST" class="form">
                     {% csrf_token %}
                     {{ form|crispy}}
                     <div class="text-center">
-                        <a href="{% url 'community' %}" type="button" class="btn btn-danger rounded-pill"><i class="fa-solid fa-ban"></i></a>
+                        <a href="{% url 'community' %}" class="btn btn-danger rounded-pill"><i class="fa-solid fa-ban"></i></a>
                         <button type="submit" class="btn btn-primary rounded-pill"><i class="fa-solid fa-paper-plane"></i></button>
                     </div>
                 </form>
