@@ -36,7 +36,7 @@ To generate an income from subscriptions and products.
 ![Sort alphabetically](/media/sort.alpha.jpg)
 ![Sort categorically](/media/sort.category.jpg)
 ![Sort price](/media/sort.price.jpg)
-![clothes](/media/clothes.jpg)
+![clothes](/media/clothing.jpg)
 ![Equipment](/media/equipment.jpg)
 ![supplements](/media/supplements.jpg)
 
