@@ -28,7 +28,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shift-v1-d8f667a6ca2b.herokuapp.com', '8000-2ndborn-shift-79eiaytri6.us1.codeanyapp.com']
+ALLOWED_HOSTS = ['shift-v1-d8f667a6ca2b.herokuapp.com',
+                 '8000-2ndborn-shift-79eiaytri6.us1.codeanyapp.com',
+                 '127.0.0.1'
+                 ]
 
 
 # Application definition
