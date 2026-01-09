@@ -208,3 +208,9 @@ def run_fixture(request):
     except Exception as e:
         return HttpResponse(f"Error: {e}", status=500)
 
+def run_migrations(request):
+    try:
+        call_command('migrate')
+        return HttpResponse("Migrations applied.")
+    except Exception as e:
+        return HttpResponse(f"Error: {e}", status=500)
