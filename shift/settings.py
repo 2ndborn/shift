@@ -26,13 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['shift-v1-d8f667a6ca2b.herokuapp.com',
-                 '8000-2ndborn-shift-79eiaytri6.us1.codeanyapp.com',
-                 '127.0.0.1'
-                 ]
-
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '127.0.0.1').split(',')
 
 # Application definition
 
