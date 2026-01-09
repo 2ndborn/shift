@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.core.management import call_command
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -197,4 +199,8 @@ def delete_review(request, product_id, review_id):
     review = get_object_or_404(Review, pk=review_id, user=request.user.userprofile, product=product)
     review.delete()
     messages.success(request, 'Review deleted!')
-    return redirect(reverse('products'))   
+    return redirect(reverse('products'))
+
+def run_fixture(request):
+    call_command('load_fixture')
+    return HttpResponse("Fixture loaded.")
