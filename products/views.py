@@ -1,5 +1,3 @@
-from django.http import HttpResponse
-from django.core.management import call_command
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -200,17 +198,3 @@ def delete_review(request, product_id, review_id):
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))
-
-def run_fixture(request):
-    try:
-        call_command('load_fixture')
-        return HttpResponse("Fixture loaded.")
-    except Exception as e:
-        return HttpResponse(f"Error: {e}", status=500)
-
-def run_migrations(request):
-    try:
-        call_command('migrate')
-        return HttpResponse("Migrations applied.")
-    except Exception as e:
-        return HttpResponse(f"Error: {e}", status=500)
