@@ -202,5 +202,9 @@ def delete_review(request, product_id, review_id):
     return redirect(reverse('products'))
 
 def run_fixture(request):
-    call_command('load_fixture')
-    return HttpResponse("Fixture loaded.")
+    try:
+        call_command('load_fixture')
+        return HttpResponse("Fixture loaded.")
+    except Exception as e:
+        return HttpResponse(f"Error: {e}", status=500)
+
