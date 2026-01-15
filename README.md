@@ -450,6 +450,41 @@ I wanted to create a start rating system for the users to review the products, b
 ![Profile](/media/op.profile.jpg)
 ![Community](/media/op.com.jpg)
 ![Sign Out](/media/op.sign.out.jpg)
+## LOCAL DEVELOPMENT
+
+### Clone Repository
+1. Login/Sign up to [GitHub](https://github.com/)
+2. Go to the project repository: [2ndborn/m-books](https://github.com/2ndborn/m-books)
+3. Click on the green **Code** button, select whether you would like to clone with **HTTPS**, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>ls (list the files and folder)</code></pre>
+  <pre><code>cd {name of location/directory}(change directory)</code></pre>
+</div>
+5. Type the following command in the terminal (after the git clone you will need to paste the link you copied in step 3 above):
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git</code></pre>
+</div>
+6. Set up a virtual environment:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>python -m venv name_env</code></pre>
+  <pre><code>name_env\Scripts\activate</code></pre>
+  <pre><code>Select the venv interpreter in VS Code (Ctrl+Shift+P → Python: Select Interpreter).</code></pre>
+</div>
+7. Install the packages from the requirements.txt file by running the following command in the Terminal:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>pip install -r requirements.txt</code></pre>
+</div>
+8. Run the server:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>python3 manage.py runserver	</code></pre>
+</div>
+9. Open a new window by press ctrl + click either of the following:
+<div style="background:#f6f8fa; padding:1em; border-radius:6px;">
+  <pre><code>http://127.0.0.1:8000</code></pre>
+</div>
+
+Migrated over to Railway because it has a free tarif [Railway deployment](RAILWAY.md)
 ## Deployment
 ### Codeanywhere
  1. Go to [https://app.codeanywhere.com/](https://app.codeanywhere.com/)
