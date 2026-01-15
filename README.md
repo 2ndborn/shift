@@ -512,4 +512,4 @@ Migrated over to Railway because it has a free tarif [Railway deployment](RAILWA
 8. Finally, click on the Open App button at the top of the page.
 ![heroku_open_app](/media/hero7.jpg)
 
-Live link https://shift-v1-d8f667a6ca2b.herokuapp.com/
+Live link https://web-production-402df.up.railway.app/
