@@ -1,7 +1,7 @@
 # SHiFT
 
 ## Project Goals
-It'll workout is a web application that will allow its users to join a community of subscribers, purchase exercise/meal plans and products. 
+Shift is a web application designed to bring users together through a dedicated fitness community. Subscribers can access and purchase tailored exercise and meal plans, explore a range of gym equipment and apparel, and connect with one another through an integrated social network that enables communication and community engagement.
 
 ## User Goals
 All users to be able to browse packages to subscribe to and purchase products.
